@@ -32,10 +32,10 @@ export function Header() {
         scrolled ? "bg-background/80 backdrop-blur-xl border-b border-border/50 shadow-sm" : "bg-transparent"
       }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-12 shadow-md rounded-b-2xl bg-background/80 backdrop-blur-xl border-b border-border/40" aria-label="Global">
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5 group">
-            <span className="text-xl font-bold tracking-tight bg-gradient-to-r from-foreground to-accent bg-clip-text text-transparent group-hover:from-accent group-hover:to-foreground transition-all duration-300">
+            <span className="text-2xl sm:text-3xl font-extrabold tracking-tight bg-gradient-to-r from-foreground to-accent bg-clip-text text-transparent group-hover:from-accent group-hover:to-foreground transition-all duration-300 drop-shadow-md">
               yubraj panthi
             </span>
           </a>
@@ -55,17 +55,26 @@ export function Header() {
             {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </Button>
         </div>
-        <div className="hidden lg:flex lg:gap-x-8 lg:items-center">
+        <div className="hidden lg:flex lg:gap-x-10 lg:items-center">
           {navigation.map((item) => (
             <a
               key={item.name}
               href={item.href}
-              className="text-sm font-medium leading-6 text-muted-foreground hover:text-foreground transition-colors relative group py-2"
+              className="text-lg font-semibold leading-7 text-muted-foreground hover:text-accent transition-colors relative group py-2 px-2 tracking-wide"
+              style={{ letterSpacing: '0.02em' }}
             >
               {item.name}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full" />
+              <span className="absolute bottom-0 left-0 w-0 h-1 bg-accent transition-all duration-300 group-hover:w-full rounded-full" />
             </a>
           ))}
+          <a
+            href="/yubrajpanthi-cv.pdf"
+            download
+            className="ml-4 px-5 py-2 rounded-xl font-bold text-base shadow transition-colors border border-accent/30 tracking-wide bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 text-white hover:from-blue-700 hover:to-pink-600 hover:shadow-lg"
+            style={{ boxShadow: '0 4px 20px 0 rgba(80, 63, 205, 0.15)' }}
+          >
+            Download CV
+          </a>
           <Button
             variant="ghost"
             size="icon"
@@ -90,6 +99,13 @@ export function Header() {
                 {item.name}
               </a>
             ))}
+            <a
+              href="/yubrajpanthi-cv.pdf"
+              download
+              className="block rounded-lg px-3 py-2 mt-2 text-base font-semibold leading-7 text-accent-foreground bg-accent border border-accent/30 shadow hover:bg-accent/90 transition-colors"
+            >
+              Download CV
+            </a>
           </div>
         </div>
       )}
