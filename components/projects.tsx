@@ -13,7 +13,7 @@ const projects = [
     description: "A detailed look at landslide stabilization methods used in a critical Nepali highway.",
     image: "/landslide.jpeg",
     tags: ["Geotechnical", "Landslide", "Nepal"],
-    year: "2024",
+    year: "2025",
     link: "https://medium.com/@yubrajpanthi/landslide-stabilization-technique-in-mugling-narayanghat-road-130e65160df0",
   },
   {
@@ -22,7 +22,7 @@ const projects = [
     description: "Exploring the impact of Intelligent Transportation Systems in Kathmandu.",
     image: "/traffic.jpeg",
     tags: ["ITS", "Traffic", "Kathmandu"],
-    year: "2024",
+    year: "2025",
     link: "https://medium.com/@yubrajpanthi/kathmandus-traffic-revolution-the-its-pilot-that-could-change-everything-291a6195b977",
   },
   {
@@ -31,7 +31,7 @@ const projects = [
     description: "Research on groundwater resources, drought impact, and recharge issues in Nepal's Terai region.",
     image: "/placeholder.svg",
     tags: ["Groundwater", "Terai", "Research"],
-    year: "2024",
+    year: "2025",
     link: "https://www.researchgate.net/publication/394403748_Understanding_the_Ground_Water_Availability_of_Terai_Region_in_NepalAvailability_Impact_of_Drought_and_Recharge_Problems",
   },
 ]
