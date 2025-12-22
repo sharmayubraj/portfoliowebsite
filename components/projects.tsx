@@ -8,31 +8,31 @@ import { useState } from "react"
 
 const projects = [
   {
-    title: "Skyline Tower",
-    category: "Commercial",
-    description:
-      "45-story mixed-use high-rise featuring innovative seismic design and sustainable LEED Platinum certification.",
-    image: "/modern-commercial-building-structural-design.jpg",
-    tags: ["Structural Design", "High-Rise", "LEED"],
-    year: "2023",
+    title: "Landslide Stabilization Technique in Mugling-Narayanghat Road",
+    category: "Article",
+    description: "A detailed look at landslide stabilization methods used in a critical Nepali highway.",
+    image: "/landslide.jpeg",
+    tags: ["Geotechnical", "Landslide", "Nepal"],
+    year: "2024",
+    link: "https://medium.com/@yubrajpanthi/landslide-stabilization-technique-in-mugling-narayanghat-road-130e65160df0",
   },
   {
-    title: "Harbor Bridge Expansion",
-    category: "Infrastructure",
-    description:
-      "Major bridge rehabilitation project increasing capacity while preserving historical architectural elements.",
-    image: "/modern-bridge-infrastructure-engineering.jpg",
-    tags: ["Bridge Design", "Infrastructure", "Rehabilitation"],
-    year: "2022",
+    title: "Kathmandu's Traffic Revolution: The ITS Pilot That Could Change Everything",
+    category: "Article",
+    description: "Exploring the impact of Intelligent Transportation Systems in Kathmandu.",
+    image: "/traffic.jpeg",
+    tags: ["ITS", "Traffic", "Kathmandu"],
+    year: "2024",
+    link: "https://medium.com/@yubrajpanthi/kathmandus-traffic-revolution-the-its-pilot-that-could-change-everything-291a6195b977",
   },
   {
-    title: "Riverside Residences",
-    category: "Residential",
-    description:
-      "Luxury residential complex with advanced foundation systems designed for waterfront construction challenges.",
-    image: "/luxury-residential-building-architecture.jpg",
-    tags: ["Residential", "Foundation Design", "Luxury"],
-    year: "2023",
+    title: "Understanding the Ground Water Availability of Terai Region in Nepal: Availability, Impact of Drought, and Recharge Problems",
+    category: "Research Paper",
+    description: "Research on groundwater resources, drought impact, and recharge issues in Nepal's Terai region.",
+    image: "/placeholder.svg",
+    tags: ["Groundwater", "Terai", "Research"],
+    year: "2024",
+    link: "https://www.researchgate.net/publication/394403748_Understanding_the_Ground_Water_Availability_of_Terai_Region_in_NepalAvailability_Impact_of_Drought_and_Recharge_Problems",
   },
 ]
 
@@ -54,53 +54,60 @@ export function Projects() {
 
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 xl:grid-cols-3">
           {projects.map((project, index) => (
-            <Card
+            <a
               key={index}
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
-              className="overflow-hidden group hover:shadow-2xl hover:shadow-accent/10 transition-all duration-500 hover:-translate-y-2 border-border/50 bg-card/50 backdrop-blur-sm"
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block"
             >
-              <div className="relative h-64 overflow-hidden bg-muted">
-                <Image
-                  src={project.image || "/placeholder.svg"}
-                  alt={project.title}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div
-                  className={`absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent transition-opacity duration-300 ${hoveredIndex === index ? "opacity-100" : "opacity-0"}`}
-                />
-                <div
-                  className={`absolute bottom-4 left-4 right-4 transition-all duration-300 ${hoveredIndex === index ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}
-                >
-                  <Badge variant="secondary" className="bg-accent text-accent-foreground shadow-lg">
-                    {project.year}
-                  </Badge>
+              <Card
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
+                className="overflow-hidden group hover:shadow-2xl hover:shadow-accent/10 transition-all duration-500 hover:-translate-y-2 border-border/50 bg-card/50 backdrop-blur-sm"
+              >
+                <div className="relative h-64 overflow-hidden bg-muted">
+                  <Image
+                    src={project.image || "/placeholder.svg"}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent transition-opacity duration-300 ${hoveredIndex === index ? "opacity-100" : "opacity-0"}`}
+                  />
+                  <div
+                    className={`absolute bottom-4 left-4 right-4 transition-all duration-300 ${hoveredIndex === index ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}
+                  >
+                    <Badge variant="secondary" className="bg-accent text-accent-foreground shadow-lg">
+                      {project.year}
+                    </Badge>
+                  </div>
                 </div>
-              </div>
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <Badge variant="outline" className="border-accent/30 text-accent">
-                    {project.category}
-                  </Badge>
-                  <ArrowUpRight className="h-5 w-5 text-muted-foreground group-hover:text-accent transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-3">
+                    <Badge variant="outline" className="border-accent/30 text-accent">
+                      {project.category}
+                    </Badge>
+                    <ArrowUpRight className="h-5 w-5 text-muted-foreground group-hover:text-accent transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-accent transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-muted-foreground mb-4 leading-relaxed text-sm">{project.description}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-xs px-3 py-1 rounded-full bg-muted/50 text-muted-foreground border border-border/50 hover:border-accent/30 transition-colors"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-accent transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-muted-foreground mb-4 leading-relaxed text-sm">{project.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-xs px-3 py-1 rounded-full bg-muted/50 text-muted-foreground border border-border/50 hover:border-accent/30 transition-colors"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </Card>
+              </Card>
+            </a>
           ))}
         </div>
       </div>

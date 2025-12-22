@@ -14,8 +14,8 @@ export default function PortfolioPage() {
       <main>
         <Hero />
         <About />
-        <Experience />
         <Projects />
+        <Experience />
         <Certificates />
         <Contact />
       </main>

@@ -9,10 +9,10 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Alex Rivera - Civil Engineer Portfolio",
+  title: "Yubraj Panthi - Civil Engineer Portfolio",
   description:
     "Modern civil engineering portfolio showcasing structural design expertise, infrastructure projects, professional certifications, and innovative engineering solutions",
-  generator: "v0.app",
+  
   icons: {
     icon: [
       {

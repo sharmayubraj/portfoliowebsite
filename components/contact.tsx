@@ -46,10 +46,11 @@ export function Contact() {
                   <div>
                     <p className="font-medium text-foreground mb-1">Email</p>
                     <a
-                      href="mailto:alex.rivera@example.com"
+                      href="mailto:yubrajsharma143@gmail.com"
                       className="text-sm text-muted-foreground hover:text-accent transition-colors"
                     >
-                      alex.rivera@example.com
+                     yubrajsharma143@gmail.com
+
                     </a>
                   </div>
                 </div>
@@ -63,10 +64,10 @@ export function Contact() {
                   <div>
                     <p className="font-medium text-foreground mb-1">Phone</p>
                     <a
-                      href="tel:+1234567890"
+                      href="tel:+9866413389"
                       className="text-sm text-muted-foreground hover:text-accent transition-colors"
                     >
-                      +1 (234) 567-890
+                     +977-9866413389
                     </a>
                   </div>
                 </div>
@@ -79,7 +80,7 @@ export function Contact() {
                   </div>
                   <div>
                     <p className="font-medium text-foreground mb-1">Location</p>
-                    <p className="text-sm text-muted-foreground">San Francisco, CA</p>
+                    <p className="text-sm text-muted-foreground">Kathmandu, Nepal</p>
                   </div>
                 </div>
               </Card>

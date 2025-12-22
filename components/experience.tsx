@@ -1,26 +1,21 @@
 import { Card } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
 
 const experiences = [
   {
-    year: "2020 — Present",
-    role: "Senior Structural Engineer",
-    company: "Apex Engineering Solutions",
-    description:
-      "Leading structural design for high-rise commercial buildings and infrastructure projects. Managing cross-functional teams and ensuring compliance with international standards.",
+    year: "2022-2023",
+    role: "President",
+    company: "Interact club Of Central Butwal",
   },
   {
-    year: "2016 — 2020",
-    role: "Project Engineer",
-    company: "Urban Infrastructure Corp",
-    description:
-      "Designed and supervised bridge construction projects. Collaborated with architects and contractors to deliver projects on time and within budget.",
+    year: "2022-2023",
+    role: "Vice President",
+    company: "NHI STEM",
   },
   {
-    year: "2013 — 2016",
-    role: "Junior Civil Engineer",
-    company: "Metropolitan Design Group",
-    description:
-      "Assisted in structural analysis and design of residential and commercial buildings. Developed proficiency in AutoCAD, Revit, and SAP2000.",
+    year: "2025-2026",
+    role: "Executive Member",
+    company: "CESS Thapathali Campus",
   },
 ]
 
@@ -33,21 +28,26 @@ export function Experience() {
           <h2 className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Professional Journey</h2>
         </div>
 
-        <div className="mx-auto max-w-4xl">
-          <div className="space-y-8">
+        <div className="mx-auto max-w-3xl">
+          <div className="relative border-l-4 border-accent/30 pl-8 space-y-12">
             {experiences.map((exp, index) => (
-              <Card key={index} className="p-8 hover:shadow-lg transition-all hover:scale-[1.01]">
-                <div className="flex flex-col md:flex-row md:items-start gap-6">
-                  <div className="md:w-48 flex-shrink-0">
-                    <p className="text-sm font-medium text-muted-foreground">{exp.year}</p>
+              <div key={index} className="relative group">
+                {/* Timeline Dot */}
+                <span className="absolute -left-5 top-2 w-4 h-4 rounded-full bg-accent border-4 border-background group-hover:scale-110 transition-transform shadow-md" />
+                <Card className="p-6 md:p-8 bg-card/80 backdrop-blur-md shadow-lg border-accent/10 hover:border-accent/40 transition-all">
+                  <div className="flex flex-col md:flex-row md:items-center md:gap-8 gap-2">
+                    <Badge variant="secondary" className="mb-2 md:mb-0 w-fit text-base px-4 py-1 bg-accent/20 text-accent font-semibold">
+                      {exp.year}
+                    </Badge>
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-bold text-foreground mb-1 group-hover:text-accent transition-colors">
+                        {exp.role}
+                      </h3>
+                      <p className="text-lg text-muted-foreground font-medium mb-1">{exp.company}</p>
+                    </div>
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-foreground mb-2">{exp.role}</h3>
-                    <p className="text-accent font-medium mb-4">{exp.company}</p>
-                    <p className="text-muted-foreground leading-relaxed">{exp.description}</p>
-                  </div>
-                </div>
-              </Card>
+                </Card>
+              </div>
             ))}
           </div>
         </div>

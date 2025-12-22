@@ -1,4 +1,4 @@
-"use client"
+ "use client"
 
 import { useState, useEffect } from "react"
 import { Menu, X, Moon, Sun } from "lucide-react"
@@ -36,7 +36,7 @@ export function Header() {
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5 group">
             <span className="text-xl font-bold tracking-tight bg-gradient-to-r from-foreground to-accent bg-clip-text text-transparent group-hover:from-accent group-hover:to-foreground transition-all duration-300">
-              Alex Rivera
+              yubraj panthi
             </span>
           </a>
         </div>

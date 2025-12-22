@@ -1,10 +1,11 @@
 "use client"
 
 import { ArrowRight, Github, Linkedin, Mail, Sparkles } from "lucide-react"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { useEffect, useState } from "react"
 
-const roles = ["Civil Engineer", "Structural Designer", "Project Manager", "Infrastructure Specialist"]
+const roles = ["Civil Engineer", "Structural Designer" ]
 
 export function Hero() {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0)
@@ -40,33 +41,46 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 lg:px-8 overflow-hidden">
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(59,130,246,0.15),transparent)]" />
-        <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
-      </div>
+      {/* Main content wrapper for single parent */}
+      <div className="w-full">
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(59,130,246,0.15),transparent)]" />
+          <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+        </div>
 
-      <div className="mx-auto max-w-4xl py-32 sm:py-48">
-        <div className="text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-6 animate-fade-in">
-            <Sparkles className="h-4 w-4 text-accent" />
-            <p className="text-sm font-medium text-accent tracking-wider">
-              {displayedText}
-              <span className="animate-pulse">|</span>
-            </p>
+        <div className="mx-auto max-w-4xl py-32 sm:py-48">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-10 mb-10 animate-fade-in-up">
+            <div className="flex-shrink-0 mb-6 md:mb-0">
+              <div className="w-44 h-44 md:w-56 md:h-56 relative rounded-full overflow-hidden border-4 border-accent shadow-xl">
+                <Image
+                  src="/yubrajbhai.jpeg"
+                  alt="Yubraj Panthi profile photo"
+                  fill
+                  className="object-cover object-center"
+                  priority
+                />
+              </div>
+            </div>
+            <div className="flex flex-col items-center md:items-start text-center md:text-left">
+              <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-foreground mb-4">
+                Yubraj {" "}
+                <span className="bg-gradient-to-r from-accent via-blue-500 to-accent bg-clip-text text-transparent animate-gradient">
+                  Panthi
+                </span>
+              </h1>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-4">
+                <Sparkles className="h-4 w-4 text-accent" />
+                <p className="text-base font-medium text-accent tracking-wider">
+                  {displayedText}
+                  <span className="animate-pulse">|</span>
+                </p>
+              </div>
+              <p className="text-lg leading-8 text-muted-foreground max-w-xl mb-8">
+                Hello, I’m Yubraj; a civil engineering student passionate about GIS, CAD, and research. I believe in learning deeply, working consistently, and building solutions that matter.
+              </p>
+            </div>
           </div>
-
-          <h1 className="text-6xl font-bold tracking-tight text-foreground sm:text-8xl text-balance mb-6 animate-fade-in-up">
-            Alex{" "}
-            <span className="bg-gradient-to-r from-accent via-blue-500 to-accent bg-clip-text text-transparent animate-gradient">
-              Rivera
-            </span>
-          </h1>
-
-          <p className="text-lg leading-8 text-muted-foreground max-w-2xl mx-auto mb-10 text-pretty animate-fade-in-up animation-delay-200">
-            Designing structural solutions that shape our world. Specialized in sustainable infrastructure, high-rise
-            structures, and innovative engineering approaches that push boundaries.
-          </p>
 
           <div className="flex items-center justify-center gap-x-4 mb-12 animate-fade-in-up animation-delay-400">
             <Button
@@ -86,16 +100,7 @@ export function Hero() {
 
           <div className="flex items-center justify-center gap-x-6 animate-fade-in-up animation-delay-600">
             <a
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-accent transition-colors p-2 hover:bg-accent/10 rounded-lg"
-            >
-              <Github className="h-6 w-6" />
-              <span className="sr-only">GitHub</span>
-            </a>
-            <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/yubraj-panthi-a2b668315/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-accent transition-colors p-2 hover:bg-accent/10 rounded-lg"
@@ -104,7 +109,7 @@ export function Hero() {
               <span className="sr-only">LinkedIn</span>
             </a>
             <a
-              href="mailto:alex.rivera@example.com"
+              href="mailto:yubrajsharma143@gmail.com"
               className="text-muted-foreground hover:text-accent transition-colors p-2 hover:bg-accent/10 rounded-lg"
             >
               <Mail className="h-6 w-6" />
@@ -112,11 +117,10 @@ export function Hero() {
             </a>
           </div>
         </div>
-      </div>
-
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-accent/30 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-accent rounded-full mt-2 animate-pulse" />
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+          <div className="w-6 h-10 border-2 border-accent/30 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-accent rounded-full mt-2 animate-pulse" />
+          </div>
         </div>
       </div>
     </section>
