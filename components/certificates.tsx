@@ -30,23 +30,23 @@ export function Certificates() {
           {[
             {
               src: "/1.jpeg",
-              title: "Certificate of Achievement",
-              desc: "Awarded for outstanding performance in civil engineering."
+              title: "Certificate of Event Coordinator at Yathartha Tech Fest",
+              // desc: "Awarded for outstanding performance in civil engineering."
             },
             {
               src: "/2.jpeg",
-              title: "Participation Certificate",
-              desc: "Recognized for active participation in technical workshops."
+              title: "Nepal first at quiz competition",
+              // desc: "Recognized for active participation in technical workshops."
             },
             {
               src: "/4.jpeg",
-              title: "Seminar Completion",
-              desc: "Completed a seminar on advanced structural design."
+              title: "Volunteering at YRC Thapathali Campus",
+              // desc: "Completed a seminar on advanced structural design."
             },
             {
               src: "/3.jpeg",
-              title: "Training Certificate",
-              desc: "Successfully finished training in project management."
+              title: "Certificate of Regional winner of International  Competition",
+              // desc: "Successfully finished training in project management."
             },
           ].map((img, idx) => (
             <div key={img.src} className="w-64 flex flex-col items-center">
