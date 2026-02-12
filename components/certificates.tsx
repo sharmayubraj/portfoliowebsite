@@ -19,7 +19,7 @@ export function Certificates() {
         <div className="mx-auto max-w-2xl lg:mx-0 mb-16">
           <p className="text-sm font-semibold leading-7 text-accent uppercase tracking-wider">Certifications</p>
           <h2 className="mt-2 text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-            Professional Credentials
+            Professional Credential
           </h2>
           <p className="mt-6 text-lg leading-8 text-muted-foreground">
             Industry-recognized certifications demonstrating expertise and commitment to professional development.
