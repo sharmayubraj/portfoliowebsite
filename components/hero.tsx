@@ -5,7 +5,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { useEffect, useState } from "react"
 
-const roles = ["Civil Engineer", "Structural Designer" ]
+const roles = ["Civil Engineer", "Transportation Researcher" ]
 
 export function Hero() {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0)
